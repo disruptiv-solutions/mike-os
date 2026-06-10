@@ -370,6 +370,20 @@ export default function AuditPage() {
               </a>
             </div>
           </div>
+
+          <div className="mt-6 rounded-lg border border-line bg-surface/50 p-6 sm:p-8">
+            <p className="font-mono text-xs tracking-[0.25em] text-ash uppercase">
+              One more thing — on me
+            </p>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-fog">
+              Three months of{" "}
+              <span className="text-paper">LaunchBox Pro</span>, free. Not
+              part of the build, no strings. When the Inclusioneer Lab is
+              ready to have a home — community, lessons, the cohort that walks
+              out of the summit — it has one waiting. The clock doesn&apos;t
+              start until you say go.
+            </p>
+          </div>
         </div>
       </section>
 
