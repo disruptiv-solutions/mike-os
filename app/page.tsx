@@ -362,12 +362,6 @@ export default function AuditPage() {
               <p className="text-fog">
                 Send the access checklist, and I start Monday.
               </p>
-              <a
-                href={`mailto:${OFFER.email}?subject=Mike OS — starting Phase 1`}
-                className="mt-5 inline-flex items-center gap-2 rounded-md bg-moss px-6 py-3 font-mono text-sm font-medium tracking-wide text-ink transition hover:bg-moss-dim"
-              >
-                Start Phase 1 →
-              </a>
             </div>
           </div>
 
