@@ -4,6 +4,8 @@ import {
   CHECKLIST,
   DAYS_TO_SUMMIT,
   OFFER,
+  PHASE1_NOT,
+  PHASE1_SCOPE,
   PHASES,
   POSITIONING,
 } from "@/lib/seed";
@@ -121,8 +123,8 @@ export default function AuditPage() {
               </span>{" "}
               — and what you need isn&apos;t a content agent, it&apos;s a
               knowledge engine where content is just one output. I agree with
-              the diagnosis. The rest of this page is the part an AI chat
-              can&apos;t give you: the build.
+              the diagnosis. The rest of this audit turns it into a buildable
+              first phase.
             </p>
           </div>
         </div>
@@ -228,10 +230,10 @@ export default function AuditPage() {
                         I didn&apos;t stop at the document
                       </p>
                       <p className="mt-3 leading-relaxed text-paper">
-                        I went ahead and scaffolded Phase 1. What you&apos;re
-                        about to click into is a working preview of Mike OS —
-                        seeded with real intelligence pulled from our two
-                        calls. Static data today. Live system in Phase 1.
+                        I went ahead and built a preview of Phase 1. What
+                        you&apos;re about to click into is Mike OS — seeded
+                        with real intelligence pulled from our two calls.
+                        Static data today. Live system in Phase 1.
                       </p>
                       <Link
                         href="/preview"
@@ -256,8 +258,8 @@ export default function AuditPage() {
             <Kicker>What I need from you</Kicker>
           </div>
           <p className="mt-6 max-w-2xl leading-relaxed text-fog">
-            Five things. None of them take more than fifteen minutes, and they
-            are the entire critical path to kickoff.
+            Five things. Most should take less than fifteen minutes, and
+            together they are the entire critical path to kickoff.
           </p>
           <div className="mt-10 overflow-hidden rounded-lg border border-line">
             {CHECKLIST.map((c, i) => (
@@ -292,11 +294,34 @@ export default function AuditPage() {
               {OFFER.phase}
             </h2>
             <p className="mt-6 max-w-2xl leading-relaxed text-fog">
-              The knowledge engine, the relationship tracking, and the Monday
-              dashboard — live and fed by your real calls, Drive and GHL,
-              before your participant brainstorms wrap. Built on what you just
-              previewed, not started from scratch.
+              The first working version of Mike OS: the knowledge engine,
+              relationship tracking, summit intelligence and the Monday brief
+              — fed by your real calls, Drive and content archive, before your
+              participant brainstorms wrap. Built from the preview you just
+              clicked through, not started from scratch.
             </p>
+
+            <div className="mt-8 grid gap-2 sm:grid-cols-2">
+              {PHASE1_SCOPE.map((s) => (
+                <div key={s} className="flex gap-3 text-sm leading-relaxed text-fog">
+                  <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-moss" />
+                  {s}
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-lg border border-line bg-elevated/60 p-5">
+              <p className="font-mono text-xs tracking-widest text-ash uppercase">
+                What Phase 1 is not
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-fog">
+                It is not {PHASE1_NOT.slice(0, -1).join(", ")}, or{" "}
+                {PHASE1_NOT[PHASE1_NOT.length - 1]}. Phase 1 is the core
+                intelligence layer — once it works, all of those get much
+                easier and cheaper to build on top of it.
+              </p>
+            </div>
+
             <div className="mt-10 flex flex-wrap gap-10 font-mono text-sm">
               <div>
                 <p className="text-xs tracking-widest text-ash uppercase">
@@ -308,27 +333,40 @@ export default function AuditPage() {
                 <p className="text-xs tracking-widest text-ash uppercase">
                   Investment
                 </p>
-                <p className="mt-2 text-xl text-moss">{OFFER.price}</p>
+                <p className="mt-2 text-xl text-moss">
+                  {OFFER.price}{" "}
+                  <span className="text-sm text-ash line-through">
+                    {OFFER.anchor}
+                  </span>
+                </p>
+                <p className="mt-1 text-[11px] tracking-widest text-ash uppercase">
+                  Founder build rate
+                </p>
               </div>
               <div>
                 <p className="text-xs tracking-widest text-ash uppercase">
-                  Starts
+                  Structure
                 </p>
-                <p className="mt-2 text-xl text-paper">
-                  When the checklist lands
-                </p>
+                <p className="mt-2 text-xl text-paper">{OFFER.split}</p>
               </div>
             </div>
+
+            <p className="mt-8 max-w-2xl text-sm leading-relaxed text-fog">
+              Straight up: this is scoped at {OFFER.anchor}. You&apos;re
+              getting the founder build rate because Mike OS is an early build
+              of its kind and a use case I want to document. The trade — when
+              it works, I get to tell the story.
+            </p>
+
             <div className="mt-10 border-t border-line pt-8">
               <p className="text-fog">
-                Reply <span className="font-mono text-moss">yes</span>, send
-                the Drive access, and I start Monday.
+                Send the access checklist, and I start Monday.
               </p>
               <a
-                href={`mailto:${OFFER.email}?subject=Mike OS — yes, let's build Phase 1`}
+                href={`mailto:${OFFER.email}?subject=Mike OS — starting Phase 1`}
                 className="mt-5 inline-flex items-center gap-2 rounded-md bg-moss px-6 py-3 font-mono text-sm font-medium tracking-wide text-ink transition hover:bg-moss-dim"
               >
-                Reply yes →
+                Start Phase 1 →
               </a>
             </div>
           </div>

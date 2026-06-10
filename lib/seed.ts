@@ -1,13 +1,31 @@
 export const SUMMIT_DATE = "September 13–14, 2026 · Los Angeles";
 export const DAYS_TO_SUMMIT = 95;
 
-// TODO(ian): set the real Phase 1 price + duration before sending
 export const OFFER = {
   phase: "Phase 1 — Summit & Relationship Intelligence",
   duration: "3–4 weeks",
-  price: "$X,XXX",
+  anchor: "$3,500",
+  price: "$2,500",
+  split: "$1,250 to start · $1,250 on delivery",
   email: "info@disruptiv.solutions",
 };
+
+export const PHASE1_SCOPE = [
+  "Summit & relationship intelligence dashboard",
+  "Transcript intake workflow — every call captured",
+  "Relationship profiles with drift alerts",
+  "Summit theme & session extraction",
+  "Content opportunity feed from every call",
+  "The Monday brief — first working version",
+];
+
+export const PHASE1_NOT = [
+  "a full CRM replacement",
+  "automated posting",
+  "LinkedIn scraping or automated outreach",
+  "podcast production",
+  "a finished summit project manager",
+];
 
 export const POSITIONING =
   "A hospitality strategist who sees the guest experience through the lens of accessibility.";
@@ -25,7 +43,7 @@ export const ASSETS: Asset[] = [
     stat: "321 subscribers",
     detail:
       "Your strongest channel — the right people are subscribing. But LinkedIn owns the list; you only see profiles, not emails.",
-    phase1: "Subscriber capture + migration plan",
+    phase1: "Owned-list migration strategy",
   },
   {
     name: "Substack",
@@ -83,6 +101,7 @@ export const PHASES: Phase[] = [
       "One Monday dashboard: what deserves your attention this week",
       "Relationship tracking — who needs follow-up, who's drifting, what was committed",
       "Summit themes and session structure assembled from the conversations themselves",
+      "A content opportunity feed — hooks and angles surfaced from every call (full drafting arrives in Phase 2)",
     ],
   },
   {
