@@ -357,6 +357,15 @@ export type Agent = {
 
 export const AGENTS: Agent[] = [
   {
+    name: "The Operator",
+    codename: "operator",
+    job: "Your front door — ask anything, from any page",
+    watches: "The page you're on, plus everything the rest of the team produces",
+    produces: "Context-aware answers, drafts and next moves on request — try it from the sidebar",
+    cadence: "Whenever you open the panel",
+    phase: "Phase 1",
+  },
+  {
     name: "The Scribe",
     codename: "call-ingest",
     job: "Turns every conversation into organizational intelligence",

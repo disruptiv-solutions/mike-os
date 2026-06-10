@@ -12,7 +12,7 @@ export default function AgentsPage() {
     <div>
       <PageHeader
         title="Your team"
-        sub="Seven agents, one operating system. They work the background so the foreground is yours — and nothing ships or sends without your yes."
+        sub="Eight agents, one operating system. They work the background so the foreground is yours — and nothing ships or sends without your yes."
       />
 
       <div className="mt-8 space-y-3">
@@ -81,7 +81,7 @@ export default function AgentsPage() {
       </div>
 
       <Phase1Footnote>
-        the four Phase 1 agents go live first — they&apos;re the knowledge
+        the five Phase 1 agents go live first — they&apos;re the knowledge
         engine. The Ghostwriter and Art Department arrive in Phase 2 once the
         engine has your voice. The Scout joins after the summit. Hiring this
         team the human way costs more per month than the whole system does

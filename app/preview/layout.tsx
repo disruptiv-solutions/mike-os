@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { PreviewNav } from "@/components/preview-nav";
+import { Operator, OperatorLauncher } from "@/components/operator";
 
 export default function PreviewLayout({
   children,
@@ -9,7 +10,7 @@ export default function PreviewLayout({
   return (
     <div className="flex min-h-screen bg-ink">
       {/* Sidebar */}
-      <aside className="hidden w-60 shrink-0 flex-col border-r border-line bg-surface/60 p-5 sm:flex">
+      <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col overflow-y-auto border-r border-line bg-surface/60 p-5 sm:flex">
         <div className="flex items-center gap-2.5 px-2">
           <span className="flex h-8 w-8 items-center justify-center rounded-md bg-moss font-[family-name:var(--font-display)] text-sm font-bold text-ink">
             M
@@ -24,6 +25,9 @@ export default function PreviewLayout({
           </div>
         </div>
         <div className="mt-8">
+          <OperatorLauncher variant="sidebar" />
+        </div>
+        <div className="mt-4">
           <PreviewNav />
         </div>
         <div className="mt-auto space-y-3">
@@ -63,10 +67,13 @@ export default function PreviewLayout({
           <span className="hidden font-mono text-xs tracking-widest text-ash uppercase sm:block">
             Week of June 8, 2026
           </span>
-          <span className="flex items-center gap-2 rounded-full border border-moss/40 bg-moss-ink px-3 py-1 font-mono text-[10px] tracking-widest text-moss uppercase">
-            <span className="h-1.5 w-1.5 rounded-full bg-moss pulse-dot" />
-            Preview · static data
-          </span>
+          <div className="flex items-center gap-2">
+            <OperatorLauncher variant="topbar" />
+            <span className="flex items-center gap-2 rounded-full border border-moss/40 bg-moss-ink px-3 py-1 font-mono text-[10px] tracking-widest text-moss uppercase">
+              <span className="h-1.5 w-1.5 rounded-full bg-moss pulse-dot" />
+              Preview · static data
+            </span>
+          </div>
         </header>
         <main className="mx-auto w-full max-w-4xl flex-1 px-5 py-8 sm:px-8">
           {children}
@@ -77,6 +84,8 @@ export default function PreviewLayout({
           <PreviewNav />
         </div>
       </div>
+
+      <Operator />
     </div>
   );
 }
