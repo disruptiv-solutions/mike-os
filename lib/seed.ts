@@ -15,11 +15,11 @@ export const PHASE1_SCOPE = [
   "Relationship tracking with drift alerts — nobody falls off your map",
   "Summit themes & session map, updated after each participant brainstorm",
   "Content hooks surfaced from every call, refreshed weekly",
-  "Ask anything, anytime — answered from your real calls and contacts",
+  "Your own private login — ask the Operator anything, answered from your real calls and contacts",
 ];
 
 export const PHASE1_NOT = [
-  "software you have to learn or log into",
+  "software you have to babysit",
   "a full CRM replacement",
   "automated posting",
   "LinkedIn scraping or automated outreach",
@@ -29,6 +29,58 @@ export const PHASE1_NOT = [
 
 export const POSITIONING =
   "A hospitality strategist who sees the guest experience through the lens of accessibility.";
+
+export type Finding = {
+  title: string;
+  detail: string;
+  cost: string;
+  phase1: string;
+};
+
+export const FINDINGS: Finding[] = [
+  {
+    title: "Your brain is the database",
+    detail:
+      "Nine systems — ChatGPT, Notion, GHL, Drive, LinkedIn, Substack, call recordings, email, your phone — and zero connections between them. You are the integration layer.",
+    cost: "Every hour spent reconstructing context is an hour not spent on the summit or a client",
+    phase1: "The knowledge engine — one place everything lands",
+  },
+  {
+    title: "Calls evaporate",
+    detail:
+      "You already record participant brainstorms, podcast episodes and strategy calls. Then the intelligence dies in the file. Commitments resurface only when someone follows up on you.",
+    cost: "Session formats, content hooks and follow-ups lost within 48 hours of every call",
+    phase1: "Every call processed within 24 hours",
+  },
+  {
+    title: "Relationships drift silently",
+    detail:
+      "Royal Caribbean said 'let's talk this summer.' It's summer, and nothing fired. The door-opener vendor sat nine days with no next step. Nothing in your stack notices.",
+    cost: "Six months of cruise-line talks kept alive by memory alone",
+    phase1: "Drift alerts — nobody falls off the map",
+  },
+  {
+    title: "Content has a single point of failure",
+    detail:
+      "Output stalled when Skyla left. The engine was a person, not a process — and the six-month GHL archive that holds your voice sits unused.",
+    cost: "The 90-day summit buildup window is burning with nothing shipping",
+    phase1: "Hooks surfaced weekly now; full drafting engine in Phase 2",
+  },
+  {
+    title: "Your audience lives on rented land",
+    detail:
+      "321 newsletter subscribers on LinkedIn's servers. You see profiles, not emails. You can't export them, can't reach them directly, can't build on them later.",
+    cost: "Your strongest channel is one platform policy change from zero",
+    phase1: "Owned-list migration strategy",
+  },
+  {
+    title: "Two years of context, one fragile account",
+    detail:
+      "Your ChatGPT knows you better than any tool you use — and that memory lives in one account, backed up nowhere, connected to nothing.",
+    cost: "The closest thing you have to a second brain can't talk to your calls or contacts",
+    phase1: "Exported — a founding asset of the engine",
+  },
+];
 
 export type Asset = {
   name: string;
@@ -113,7 +165,8 @@ export const PHASES: Phase[] = [
       "Voice model built from your GHL archive — drafts that sound like you, not a template",
       "The B&W + green image system, automated",
       "Transcript → LinkedIn post → Substack issue pipeline for the 90-day buildup",
-      "You approve and publish. The system drafts.",
+      "Follow-up emails drafted from drift alerts — review, edit, send",
+      "You approve, it publishes — nothing goes out under your name without you",
     ],
   },
   {

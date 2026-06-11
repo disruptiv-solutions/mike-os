@@ -3,6 +3,7 @@ import {
   ASSETS,
   CHECKLIST,
   DAYS_TO_SUMMIT,
+  FINDINGS,
   OFFER,
   PHASE1_NOT,
   PHASE1_SCOPE,
@@ -130,12 +131,61 @@ export default function AuditPage() {
         </div>
       </section>
 
+      {/* Findings */}
+      <section className="border-b border-line">
+        <div className="mx-auto max-w-5xl px-6 py-20">
+          <div className="flex items-baseline gap-6">
+            <SectionNumber n="02" />
+            <Kicker>Findings — where it&apos;s leaking</Kicker>
+          </div>
+          <p className="mt-6 max-w-2xl leading-relaxed text-fog">
+            Two calls, your own AI&apos;s memo, and everything you walked me
+            through. Six findings — each one named, costed, and mapped to
+            whether Phase 1 fixes it.
+          </p>
+          <div className="mt-12 space-y-px overflow-hidden rounded-lg border border-line bg-line">
+            {FINDINGS.map((f, i) => (
+              <div
+                key={f.title}
+                className="grid gap-4 bg-surface p-6 sm:grid-cols-[48px_1fr] sm:gap-6"
+              >
+                <span className="font-mono text-2xl text-ash">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <div>
+                  <h3 className="font-[family-name:var(--font-display)] text-xl text-paper">
+                    {f.title}
+                  </h3>
+                  <p className="mt-2 max-w-2xl text-sm leading-relaxed text-fog">
+                    {f.detail}
+                  </p>
+                  <div className="mt-4 space-y-1.5 font-mono text-xs tracking-wide uppercase">
+                    <p className="text-ash">
+                      Costing you →{" "}
+                      <span className="normal-case tracking-normal text-fog">
+                        {f.cost}
+                      </span>
+                    </p>
+                    <p className="text-ash">
+                      Phase 1 →{" "}
+                      <span className="normal-case tracking-normal text-moss-dim">
+                        {f.phase1}
+                      </span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Current state */}
       <section className="border-b border-line bg-surface/40">
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="flex items-baseline gap-6">
-            <SectionNumber n="02" />
-            <Kicker>What you&apos;re already sitting on</Kicker>
+            <SectionNumber n="03" />
+            <Kicker>The inventory — what you&apos;re already sitting on</Kicker>
           </div>
           <p className="mt-6 max-w-2xl leading-relaxed text-fog">
             This is the part nobody has shown you: an inventory. You are not
@@ -169,8 +219,10 @@ export default function AuditPage() {
       <section className="border-b border-line">
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="flex items-baseline gap-6">
-            <SectionNumber n="03" />
-            <Kicker>The plan — everything backward from September 13</Kicker>
+            <SectionNumber n="04" />
+            <Kicker>
+              The recommendation — everything backward from September 13
+            </Kicker>
           </div>
           <p className="mt-6 max-w-2xl leading-relaxed text-fog">
             The summit is not one project among several. It&apos;s the
@@ -255,7 +307,7 @@ export default function AuditPage() {
       <section className="border-b border-line bg-surface/40">
         <div className="mx-auto max-w-5xl px-6 py-20">
           <div className="flex items-baseline gap-6">
-            <SectionNumber n="04" />
+            <SectionNumber n="05" />
             <Kicker>What I need from you</Kicker>
           </div>
           <p className="mt-6 max-w-2xl leading-relaxed text-fog">
@@ -287,7 +339,7 @@ export default function AuditPage() {
       <section id="next" className="grid-bg border-b border-line">
         <div className="mx-auto max-w-5xl px-6 py-24">
           <div className="flex items-baseline gap-6">
-            <SectionNumber n="05" />
+            <SectionNumber n="06" />
             <Kicker>The next move</Kicker>
           </div>
           <div className="mt-10 rounded-xl border border-line bg-surface p-8 sm:p-12">
@@ -297,11 +349,11 @@ export default function AuditPage() {
             <p className="mt-6 max-w-2xl leading-relaxed text-fog">
               Mike OS, run as a service. My agents process your real calls,
               Drive and content archive — you get the brief, the alerts and
-              the answers. Nothing to install, nothing to learn, nothing to
-              log into. The preview you just clicked through is a hand-built
-              mockup of what the service surfaces; in Phase 1 it lands in
-              your inbox automatically, before your participant brainstorms
-              wrap.
+              the answers. Nothing to install, nothing to babysit: the brief
+              comes to you, and you get a private login to ask the Operator
+              anything whenever you want. The preview you just clicked
+              through is a hand-built mockup of what the service surfaces; in
+              Phase 1 it goes live, before your participant brainstorms wrap.
             </p>
 
             <div className="mt-8 grid gap-2 sm:grid-cols-2">
