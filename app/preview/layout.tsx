@@ -36,8 +36,9 @@ export default function PreviewLayout({
               This is a preview
             </p>
             <p className="mt-2 text-xs leading-relaxed text-fog">
-              Everything here is static, hand-seeded from our two calls. Phase
-              1 wires it to your real calls, Drive and GHL.
+              Hand-built from our two calls — a mockup of what the service
+              surfaces every week. In Phase 1 this lands in your inbox,
+              fed by your real calls. No app to learn.
             </p>
             <Link
               href="/#next"

@@ -230,10 +230,11 @@ export default function AuditPage() {
                         I didn&apos;t stop at the document
                       </p>
                       <p className="mt-3 leading-relaxed text-paper">
-                        I went ahead and built a preview of Phase 1. What
-                        you&apos;re about to click into is Mike OS — seeded
-                        with real intelligence pulled from our two calls.
-                        Static data today. Live system in Phase 1.
+                        I went ahead and built a preview. What you&apos;re
+                        about to click into is a mockup of what Mike OS
+                        surfaces every week — seeded with real intelligence
+                        pulled from our two calls. In Phase 1 this arrives in
+                        your inbox; you never have to open an app.
                       </p>
                       <Link
                         href="/preview"
@@ -294,11 +295,13 @@ export default function AuditPage() {
               {OFFER.phase}
             </h2>
             <p className="mt-6 max-w-2xl leading-relaxed text-fog">
-              The first working version of Mike OS: the knowledge engine,
-              relationship tracking, summit intelligence and the Monday brief
-              — fed by your real calls, Drive and content archive, before your
-              participant brainstorms wrap. Built from the preview you just
-              clicked through, not started from scratch.
+              Mike OS, run as a service. My agents process your real calls,
+              Drive and content archive — you get the brief, the alerts and
+              the answers. Nothing to install, nothing to learn, nothing to
+              log into. The preview you just clicked through is a hand-built
+              mockup of what the service surfaces; in Phase 1 it lands in
+              your inbox automatically, before your participant brainstorms
+              wrap.
             </p>
 
             <div className="mt-8 grid gap-2 sm:grid-cols-2">
@@ -325,42 +328,44 @@ export default function AuditPage() {
             <div className="mt-10 flex flex-wrap gap-10 font-mono text-sm">
               <div>
                 <p className="text-xs tracking-widest text-ash uppercase">
-                  Timeline
+                  Setup
                 </p>
-                <p className="mt-2 text-xl text-paper">{OFFER.duration}</p>
-              </div>
-              <div>
-                <p className="text-xs tracking-widest text-ash uppercase">
-                  Investment
-                </p>
-                <p className="mt-2 text-xl text-moss">
-                  {OFFER.price}{" "}
-                  <span className="text-sm text-ash line-through">
-                    {OFFER.anchor}
-                  </span>
-                </p>
+                <p className="mt-2 text-xl text-moss">{OFFER.setup}</p>
                 <p className="mt-1 text-[11px] tracking-widest text-ash uppercase">
-                  Founder build rate
+                  One-time · founder rate
                 </p>
               </div>
               <div>
                 <p className="text-xs tracking-widest text-ash uppercase">
-                  Structure
+                  Service
                 </p>
-                <p className="mt-2 text-xl text-paper">{OFFER.split}</p>
+                <p className="mt-2 text-xl text-moss">{OFFER.monthly}</p>
+                <p className="mt-1 text-[11px] tracking-widest text-ash uppercase">
+                  Cancel anytime
+                </p>
+              </div>
+              <div>
+                <p className="text-xs tracking-widest text-ash uppercase">
+                  Through the summit
+                </p>
+                <p className="mt-2 text-xl text-paper">{OFFER.throughSummit}</p>
+                <p className="mt-1 text-[11px] tracking-widest text-ash uppercase">
+                  June → September
+                </p>
               </div>
             </div>
 
             <p className="mt-8 max-w-2xl text-sm leading-relaxed text-fog">
-              Straight up: this is scoped at {OFFER.anchor}. You&apos;re
-              getting the founder build rate because Mike OS is an early build
-              of its kind and a use case I want to document. The trade — when
-              it works, I get to tell the story.
+              Straight up: a part-time assistant doing half this job runs
+              $800+ a month. You&apos;re getting the founder rate because Mike
+              OS is the first build of its kind and a use case I want to
+              document. The trade — when it works, I get to tell the story.
             </p>
 
             <div className="mt-10 border-t border-line pt-8">
               <p className="text-fog">
-                Send the access checklist, and I start Monday.
+                Send the access checklist and wiring starts this week. Briefs
+                flowing by mid-July — two full months before your summit.
               </p>
             </div>
           </div>

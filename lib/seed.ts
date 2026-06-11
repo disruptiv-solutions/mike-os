@@ -3,23 +3,23 @@ export const DAYS_TO_SUMMIT = 95;
 
 export const OFFER = {
   phase: "Phase 1 — Summit & Relationship Intelligence",
-  duration: "3–4 weeks",
-  anchor: "$3,500",
-  price: "$2,500",
-  split: "$1,250 to start · $1,250 on delivery",
+  setup: "$1,500",
+  monthly: "$300/mo",
+  throughSummit: "≈ $2,400",
   email: "info@disruptiv.solutions",
 };
 
 export const PHASE1_SCOPE = [
-  "Summit & relationship intelligence dashboard",
-  "Transcript intake workflow — every call captured",
-  "Relationship profiles with drift alerts",
-  "Summit theme & session extraction",
-  "Content opportunity feed from every call",
-  "The Monday brief — first working version",
+  "The Monday brief — what deserves your attention this week, in your inbox",
+  "Every recorded call processed within 24 hours — summaries, commitments, themes",
+  "Relationship tracking with drift alerts — nobody falls off your map",
+  "Summit themes & session map, updated after each participant brainstorm",
+  "Content hooks surfaced from every call, refreshed weekly",
+  "Ask anything, anytime — answered from your real calls and contacts",
 ];
 
 export const PHASE1_NOT = [
+  "software you have to learn or log into",
   "a full CRM replacement",
   "automated posting",
   "LinkedIn scraping or automated outreach",
@@ -98,7 +98,7 @@ export const PHASES: Phase[] = [
     status: "next",
     points: [
       "Every participant call, podcast and strategy conversation auto-captured and distilled",
-      "One Monday dashboard: what deserves your attention this week",
+      "One Monday brief in your inbox: what deserves your attention this week",
       "Relationship tracking — who needs follow-up, who's drifting, what was committed",
       "Summit themes and session structure assembled from the conversations themselves",
       "A content opportunity feed — hooks and angles surfaced from every call (full drafting arrives in Phase 2)",
@@ -397,7 +397,7 @@ export const AGENTS: Agent[] = [
     codename: "monday-brief",
     job: "Answers one question: what deserves Mike's attention this week?",
     watches: "Everything the other agents produce",
-    produces: "The Today dashboard — leverage-ranked, not task-ranked",
+    produces: "The Monday brief — leverage-ranked, not task-ranked",
     cadence: "Every Monday, 6:00am",
     phase: "Phase 1",
   },
