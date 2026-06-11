@@ -53,6 +53,19 @@ export function Operator() {
 
   const script = OPERATOR_SCRIPT[pathname] ?? OPERATOR_SCRIPT["/preview"];
 
+  // Default open on desktop; mobile stays closed (panel is full-screen there)
+  useEffect(() => {
+    if (window.matchMedia("(min-width: 640px)").matches) {
+      setOpen(true);
+      setMsgs((m) =>
+        m.length === 0
+          ? [{ role: "operator", text: operatorGreeting(script.context) }]
+          : m,
+      );
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   useEffect(() => {
     const handler = () => {
       setOpen(true);
