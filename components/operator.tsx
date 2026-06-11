@@ -48,6 +48,8 @@ export function Operator() {
   const [asked, setAsked] = useState<string[]>([]);
   const [thinking, setThinking] = useState(false);
   const [input, setInput] = useState("");
+  const [width, setWidth] = useState(380);
+  const [dragging, setDragging] = useState(false);
   const bottomRef = useRef<HTMLDivElement>(null);
   const prevPath = useRef(pathname);
 
@@ -95,6 +97,23 @@ export function Operator() {
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [msgs, thinking]);
+
+  useEffect(() => {
+    if (!dragging) return;
+    const move = (e: PointerEvent) =>
+      setWidth(Math.min(640, Math.max(300, e.clientX)));
+    const up = () => setDragging(false);
+    window.addEventListener("pointermove", move);
+    window.addEventListener("pointerup", up);
+    document.body.style.userSelect = "none";
+    document.body.style.cursor = "col-resize";
+    return () => {
+      window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", up);
+      document.body.style.userSelect = "";
+      document.body.style.cursor = "";
+    };
+  }, [dragging]);
 
   const reply = (text: string) => {
     setThinking(true);
@@ -244,14 +263,25 @@ export function Operator() {
 
       {/* Desktop: in-flow sticky left sidebar — pushes content, never overlays */}
       <aside
-        className={`sticky top-0 hidden h-screen shrink-0 flex-col overflow-hidden border-r border-line bg-surface transition-[width] duration-300 ease-in-out sm:flex ${
-          open ? "w-[380px]" : "w-0 border-r-0"
-        }`}
+        className={`sticky top-0 hidden h-screen shrink-0 flex-col overflow-hidden border-r border-line bg-surface sm:flex ${
+          dragging ? "" : "transition-[width] duration-300 ease-in-out"
+        } ${open ? "" : "border-r-0"}`}
+        style={{ width: open ? width : 0 }}
       >
         {/* Inner div holds fixed width so content doesn't squish during transition */}
-        <div className="flex h-full w-[380px] flex-col">
+        <div className="flex h-full shrink-0 flex-col" style={{ width }}>
           {panelInner}
         </div>
+        {open && (
+          <div
+            onPointerDown={(e) => {
+              e.preventDefault();
+              setDragging(true);
+            }}
+            className="absolute inset-y-0 right-0 w-1.5 cursor-col-resize transition-colors hover:bg-moss/40"
+            aria-label="Resize panel"
+          />
+        )}
       </aside>
     </>
   );
