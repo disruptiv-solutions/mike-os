@@ -223,16 +223,16 @@ export function Operator() {
             className="fixed inset-0 z-40 bg-ink/60 sm:hidden"
             onClick={() => setOpen(false)}
           />
-          <div className="fixed inset-y-0 right-0 z-50 flex w-full flex-col border-l border-line bg-surface shadow-[0_0_60px_rgba(0,0,0,0.6)] sm:hidden">
+          <div className="fixed inset-y-0 left-0 z-50 flex w-full flex-col border-r border-line bg-surface shadow-[0_0_60px_rgba(0,0,0,0.6)] sm:hidden">
             {panelInner}
           </div>
         </>
       )}
 
-      {/* Desktop: in-flow sticky right sidebar — pushes content, never overlays */}
+      {/* Desktop: in-flow sticky left sidebar — pushes content, never overlays */}
       <aside
-        className={`sticky top-0 hidden h-screen shrink-0 flex-col overflow-hidden border-l border-line bg-surface transition-[width] duration-300 ease-in-out sm:flex ${
-          open ? "w-[380px]" : "w-0 border-l-0"
+        className={`sticky top-0 hidden h-screen shrink-0 flex-col overflow-hidden border-r border-line bg-surface transition-[width] duration-300 ease-in-out sm:flex ${
+          open ? "w-[380px]" : "w-0 border-r-0"
         }`}
       >
         {/* Inner div holds fixed width so content doesn't squish during transition */}
